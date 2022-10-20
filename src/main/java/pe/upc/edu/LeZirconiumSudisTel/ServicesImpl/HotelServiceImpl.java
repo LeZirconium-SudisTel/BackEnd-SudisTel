@@ -24,3 +24,6 @@ public class HotelServiceImpl implements IHotelService {
         return hR.findAll();
     }
 }
+
+ //TEST
+ 
