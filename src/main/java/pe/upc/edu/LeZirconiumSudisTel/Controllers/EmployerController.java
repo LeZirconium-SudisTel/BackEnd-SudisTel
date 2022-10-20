@@ -11,7 +11,6 @@ import java.util.List;
 public class EmployerController {
     @Autowired
     private IEmployerService eService;
-
     @PostMapping
     public void registrar(@RequestBody Employer e){
         eService.insert(e);
@@ -20,4 +19,10 @@ public class EmployerController {
     public List<Employer> listar(){
         return eService.list();
     }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){ eService.delete(id); }
+    @PutMapping
+    public void modificar(@RequestBody Employer e) { eService.insert(e); }
+    @PostMapping("/buscar")
+    public List<Employer> buscar(@RequestBody Employer e) {return eService.search(e.getFirst_nameEmployer());}
 }
