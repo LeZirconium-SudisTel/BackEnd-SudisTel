@@ -1,9 +1,12 @@
 package pe.upc.edu.LeZirconiumSudisTel.Repositories;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pe.upc.edu.LeZirconiumSudisTel.Entities.Hotel;
-
+import pe.upc.edu.LeZirconiumSudisTel.Entities.Room;
 @Repository
-public interface IHotelRepository extends JpaRepository<Hotel, Integer> {
+
+public interface IRoomRepository extends JpaRepository<Room,Integer> {
 }
+
+
+
+
