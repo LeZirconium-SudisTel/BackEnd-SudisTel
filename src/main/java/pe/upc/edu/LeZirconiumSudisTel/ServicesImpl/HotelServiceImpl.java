@@ -10,20 +10,22 @@ import java.util.List;
 
 @Service
 public class HotelServiceImpl implements IHotelService {
-
     @Autowired
     private IHotelRepository hR;
-
     @Override
     public void insert(Hotel hotel){
         hR.save(hotel);
     }
-
     @Override
     public List<Hotel> list() {
         return hR.findAll();
     }
+    @Override
+    public List<Hotel> search(String province) {
+        return hR.buscarProvincia(province);
+    }
+
 }
 
- //TEST
+
  

@@ -10,17 +10,18 @@ import java.util.List;
 @RestController
 @RequestMapping("/hotels")
 public class HotelController {
-
     @Autowired
     private IHotelService hS;
-
     @GetMapping
     public List<Hotel> list(){
         return hS.list();
     }
-
     @PostMapping
     public void registrar(@RequestBody Hotel h){
         hS.insert(h);
     }
+    @PutMapping
+    public void modificar(@RequestBody Hotel h) { hS.insert(h); }
+    @PostMapping("/buscar")
+    public List<Hotel> buscar(@RequestBody Hotel h) {return hS.search(h.getProvince());}
 }
