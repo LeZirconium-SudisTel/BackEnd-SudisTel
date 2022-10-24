@@ -21,4 +21,9 @@ public class ResourceController {
     public List<Resources> list(){
         return rResource.list();
     }
+
+    @PutMapping
+    public void modificar(@RequestBody Resources r) {rResource.insert(r);}
+    @PostMapping("/buscar")
+    public List<Resources> buscar(@RequestBody Resources r) {return rResource.search(r.getNameResource());}
 }
