@@ -6,4 +6,7 @@ import java.util.List;
 public interface IRoomService {
     public void insert(Room room);
     List<Room> list();
+
+    List<Room> search(String availableRoom);
+
 }

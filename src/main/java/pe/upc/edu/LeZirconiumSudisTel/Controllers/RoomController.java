@@ -22,4 +22,11 @@ public class RoomController {
     public List<Room> list(){
         return rService.list();
     }
+    @PutMapping
+    public void actualizar (@RequestBody Room r) {
+        rService.insert(r);
+    }
+    @PostMapping
+    public List<Room> buscar (@RequestBody Room r) {return  rService.search(r.getAvailableRoom());}
+
 }
