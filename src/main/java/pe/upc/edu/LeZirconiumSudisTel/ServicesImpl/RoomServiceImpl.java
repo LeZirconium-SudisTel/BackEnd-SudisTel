@@ -19,8 +19,8 @@ public class RoomServiceImpl implements IRoomService {
         public List<Room> list() {return rR.findAll();}
 
         @Override
-        public List<Room> search(String availableRoom) {return rR.buscarDisponible(availableRoom);}
-
-
+        public List<Room> search(String availableRoom) {
+                return rR.buscarDisponible(availableRoom);
+        }
 }
 

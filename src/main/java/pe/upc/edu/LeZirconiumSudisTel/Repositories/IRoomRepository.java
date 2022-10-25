@@ -10,7 +10,8 @@ import java.util.List;
 @Repository
 
 public interface IRoomRepository extends JpaRepository<Room,Integer> {
-    @Query("FROM Room r where r.availableRoom like %:avaiableRoom%")
+
+    @Query("FROM Room r WHERE r.availableRoom LIKE %:availableRoom%")
     List<Room> buscarDisponible(@Param("availableRoom") String availableRoom);
 }
 

@@ -43,9 +43,6 @@ public class Room {
         this.numberRoom = numberRoom;
         this.availableRoom = availableRoom;
 
-
-
-
     }
 
     public Room() {

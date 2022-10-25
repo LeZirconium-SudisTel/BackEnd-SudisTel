@@ -10,23 +10,22 @@ import java.util.List;
 @RequestMapping("Room")
 
 public class RoomController {
-
     @Autowired
-    private RoomServiceImpl rService;
-
+    private RoomServiceImpl roomService;
     @PostMapping
     public void insert(@RequestBody Room r) {
-       rService.insert(r);
+        roomService.insert(r);
     }
     @GetMapping
     public List<Room> list(){
-        return rService.list();
+        return roomService.list();
     }
     @PutMapping
-    public void actualizar (@RequestBody Room r) {
-        rService.insert(r);
+    public void actualizar(@RequestBody Room r) {
+        roomService.insert(r);
     }
-    @PostMapping
-    public List<Room> buscar (@RequestBody Room r) {return  rService.search(r.getAvailableRoom());}
-
+    @PostMapping("/buscar")
+    public List<Room> buscarDisponible(@RequestBody Room r){
+        return roomService.search(r.getAvailableRoom());
+    }
 }
