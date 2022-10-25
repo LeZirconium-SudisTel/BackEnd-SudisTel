@@ -22,4 +22,7 @@ public class ResourceServiceImpl implements IResourceService {
     public List<Resources> list(){
         return rR.findAll();
     }
+
+    @Override
+    public List<Resources> search(String nameResource) { return rR.buscarNombre(nameResource);}
 }
