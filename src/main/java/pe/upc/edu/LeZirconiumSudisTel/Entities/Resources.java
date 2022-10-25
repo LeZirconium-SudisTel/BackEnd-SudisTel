@@ -20,14 +20,18 @@ public class Resources {
     @Column(name = "stock", length = 25,nullable = false)
     private int stock;
 
+    @Column(name = "status", length = 25,nullable = false)
+    private String status;
+
     public Resources() {
     }
 
-    public Resources(int idResource, String nameResource, String typeResource, int stock) {
+    public Resources(int idResource, String nameResource, String typeResource, int stock, String status) {
         this.idResource = idResource;
         this.nameResource = nameResource;
         this.typeResource = typeResource;
         this.stock = stock;
+        this.status = status;
     }
 
     public int getIdResource() {
@@ -60,5 +64,13 @@ public class Resources {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
