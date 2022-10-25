@@ -24,7 +24,6 @@ public class EmployerServiceImpl implements IEmployerService{
         eR.deleteById(idEmployer);
     }
     @Override
-    public List<Employer> search(String first_nameEmployer){
-        return eR.buscarNombre(first_nameEmployer);
+    public List<Employer> search(String first_nameEmployer){return eR.buscarNombre(first_nameEmployer);
     }
 }

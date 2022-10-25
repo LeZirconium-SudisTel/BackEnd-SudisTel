@@ -22,4 +22,9 @@ public class HotelTaskServiceImpl implements IHotelTaskService {
     public List<HotelTask> list() {
         return tR.findAll();
     }
+
+    @Override
+    public List<HotelTask> search(String status) {
+        return tR.buscarStatus(status);
+    }
 }
