@@ -12,11 +12,11 @@ import java.util.List;
 public class HotelController {
     @Autowired
     private IHotelService hS;
-    @GetMapping
+    @GetMapping()
     public List<Hotel> list(){
         return hS.list();
     }
-    @PostMapping
+    @PostMapping()
     public void registrar(@RequestBody Hotel h){
         hS.insert(h);
     }
