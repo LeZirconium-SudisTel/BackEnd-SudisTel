@@ -4,13 +4,11 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name="reservations")
 public class Reservation {
-
-    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,11 +20,11 @@ public class Reservation {
 
     @JsonSerialize(using = ToStringSerializer.class)
     @Column(name = "check_in", nullable = false)
-    private Date check_in;
+    private LocalDate check_in;
 
     @JsonSerialize(using = ToStringSerializer.class)
     @Column(name = "check_out", nullable = false)
-    private Date check_out;
+    private LocalDate check_out;
 
     @Column(name = "room_price" ,nullable = false)
     private int room_price;
@@ -38,7 +36,7 @@ public class Reservation {
         super();
     }
 
-    public Reservation(int id, Room room, Date check_in, Date check_out, int room_price, String status) {
+    public Reservation(int id, Room room, LocalDate check_in, LocalDate check_out, int room_price, String status) {
         this.id = id;
         this.room = room;
         this.check_in = check_in;
@@ -63,19 +61,19 @@ public class Reservation {
         this.room = room;
     }
 
-    public Date getCheck_in() {
+    public LocalDate getCheck_in() {
         return check_in;
     }
 
-    public void setCheck_in(Date check_in) {
+    public void setCheck_in(LocalDate check_in) {
         this.check_in = check_in;
     }
 
-    public Date getCheck_out() {
+    public LocalDate getCheck_out() {
         return check_out;
     }
 
-    public void setCheck_out(Date check_out) {
+    public void setCheck_out(LocalDate check_out) {
         this.check_out = check_out;
     }
 
