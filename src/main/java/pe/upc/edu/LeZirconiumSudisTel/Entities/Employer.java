@@ -10,8 +10,6 @@ public class Employer {
     private int idEmployer;
     @Column(name = "emailEmployer",length = 45,nullable = false)
     private String emailEmployer;
-    @Column(name = "roleEmployer",length = 45,nullable = false)
-    private String roleEmployer;
     @Column(name = "first_nameEmployer",length = 45,nullable = false)
     private String first_nameEmployer;
     @Column(name = "last_nameEmployer",length = 45,nullable = false)
@@ -22,19 +20,31 @@ public class Employer {
     private int dniEmployer;
     @Column(name = "photoEmployer",length = 45,nullable = false)
     private String photoEmployer;
+    @ManyToOne
+    @JoinColumn(name = "idRole", nullable = false)
+    private Role role;
 
     public Employer() {
+        super();
     }
 
-    public Employer(int idEmployer, String emailEmployer, String roleEmployer, String first_nameEmployer, String last_nameEmployer, String phone_numberEmployer, int dniEmployer, String photoEmployer) {
+    public Employer(int idEmployer, String emailEmployer, String first_nameEmployer, String last_nameEmployer, String phone_numberEmployer, int dniEmployer, String photoEmployer, Role role) {
         this.idEmployer = idEmployer;
         this.emailEmployer = emailEmployer;
-        this.roleEmployer = roleEmployer;
         this.first_nameEmployer = first_nameEmployer;
         this.last_nameEmployer = last_nameEmployer;
         this.phone_numberEmployer = phone_numberEmployer;
         this.dniEmployer = dniEmployer;
         this.photoEmployer = photoEmployer;
+        this.role=role;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public int getIdEmployer() {
@@ -43,10 +53,6 @@ public class Employer {
 
     public String getEmailEmployer() {
         return emailEmployer;
-    }
-
-    public String getRoleEmployer() {
-        return roleEmployer;
     }
 
     public String getFirst_nameEmployer() {
@@ -75,10 +81,6 @@ public class Employer {
 
     public void setEmailEmployer(String emailEmployer) {
         this.emailEmployer = emailEmployer;
-    }
-
-    public void setRoleEmployer(String roleEmployer) {
-        this.roleEmployer = roleEmployer;
     }
 
     public void setFirst_nameEmployer(String first_nameEmployer) {

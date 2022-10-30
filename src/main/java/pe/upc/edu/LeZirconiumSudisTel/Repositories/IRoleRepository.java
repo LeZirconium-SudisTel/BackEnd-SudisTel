@@ -4,11 +4,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import pe.upc.edu.LeZirconiumSudisTel.Entities.Employer;
+import pe.upc.edu.LeZirconiumSudisTel.Entities.Role;
 
 import java.util.List;
 @Repository
-public interface IEmployerRepository extends JpaRepository<Employer,Integer>{
-    @Query("FROM Employer e where e.first_nameEmployer like %:first_nameEmployer%")
-    List<Employer> buscarNombre(@Param("first_nameEmployer") String first_namePropietario);
+public interface IRoleRepository extends JpaRepository<Role, Integer> {
+    @Query("FROM Role r where r.name_Role like %:name_Role%")
+    List<Role> buscarNombre(@Param("name_Role") String name_Role);
 }
