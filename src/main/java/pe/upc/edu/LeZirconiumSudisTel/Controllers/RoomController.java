@@ -7,7 +7,7 @@ import pe.upc.edu.LeZirconiumSudisTel.ServicesImpl.RoomServiceImpl;
 
 import java.util.List;
 @RestController
-@RequestMapping("Room")
+@RequestMapping("/rooms")
 
 public class RoomController {
     @Autowired
