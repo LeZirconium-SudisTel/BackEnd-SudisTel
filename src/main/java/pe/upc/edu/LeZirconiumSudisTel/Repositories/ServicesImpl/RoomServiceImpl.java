@@ -1,4 +1,4 @@
-package pe.upc.edu.LeZirconiumSudisTel.ServicesImpl;
+package pe.upc.edu.LeZirconiumSudisTel.Repositories.ServicesImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
