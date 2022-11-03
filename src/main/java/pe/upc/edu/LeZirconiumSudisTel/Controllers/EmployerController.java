@@ -6,6 +6,8 @@ import pe.upc.edu.LeZirconiumSudisTel.Entities.Employer;
 import pe.upc.edu.LeZirconiumSudisTel.ServicesInt.IEmployerService;
 
 import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/employers")
 public class EmployerController {
@@ -25,4 +27,6 @@ public class EmployerController {
     public void modificar(@RequestBody Employer e) { eService.insert(e); }
     @PostMapping("/buscar")
     public List<Employer> buscar(@RequestBody Employer e) {return eService.search(e.getFirst_nameEmployer());}
+    @GetMapping("/{id}")
+    public Optional<Employer> listarid(@PathVariable ("id") Integer id){return eService.listarid(id);}
 }
