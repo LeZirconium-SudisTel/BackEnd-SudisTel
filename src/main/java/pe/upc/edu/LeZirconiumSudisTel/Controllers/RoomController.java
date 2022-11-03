@@ -3,7 +3,7 @@ package pe.upc.edu.LeZirconiumSudisTel.Controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.upc.edu.LeZirconiumSudisTel.Entities.Room;
-import pe.upc.edu.LeZirconiumSudisTel.Repositories.ServicesImpl.RoomServiceImpl;
+import pe.upc.edu.LeZirconiumSudisTel.ServicesImpl.RoomServiceImpl;
 
 import java.util.List;
 @RestController

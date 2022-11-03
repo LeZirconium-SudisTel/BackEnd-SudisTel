@@ -20,11 +20,11 @@ public class Reservation {
 
     @JsonSerialize(using = ToStringSerializer.class)
     @Column(name = "check_in", nullable = false)
-    private LocalDate check_in;
+    private String check_in;
 
     @JsonSerialize(using = ToStringSerializer.class)
     @Column(name = "check_out", nullable = false)
-    private LocalDate check_out;
+    private String check_out;
 
     @Column(name = "room_price" ,nullable = false)
     private int room_price;
@@ -36,7 +36,7 @@ public class Reservation {
         super();
     }
 
-    public Reservation(int id, Room room, LocalDate check_in, LocalDate check_out, int room_price, String status) {
+    public Reservation(int id, Room room, String check_in, String check_out, int room_price, String status) {
         this.id = id;
         this.room = room;
         this.check_in = check_in;
@@ -61,19 +61,19 @@ public class Reservation {
         this.room = room;
     }
 
-    public LocalDate getCheck_in() {
+    public String getCheck_in() {
         return check_in;
     }
 
-    public void setCheck_in(LocalDate check_in) {
+    public void setCheck_in(String check_in) {
         this.check_in = check_in;
     }
 
-    public LocalDate getCheck_out() {
+    public String getCheck_out() {
         return check_out;
     }
 
-    public void setCheck_out(LocalDate check_out) {
+    public void setCheck_out(String check_out) {
         this.check_out = check_out;
     }
 
