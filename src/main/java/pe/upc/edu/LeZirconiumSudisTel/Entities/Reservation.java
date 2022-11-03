@@ -29,20 +29,26 @@ public class Reservation {
     @Column(name = "room_price" ,nullable = false)
     private int room_price;
 
-    @Column(name = "status",length = 20,nullable = false)
-    private String status;
+    @Column(name = "payment_method",length = 20, nullable = false)
+    private String payment_method;
+
+    @ManyToOne
+    @JoinColumn(name="id_credit_card")
+    private CreditCard credit_card;
+
 
     public Reservation() {
         super();
     }
 
-    public Reservation(int id, Room room, String check_in, String check_out, int room_price, String status) {
+    public Reservation(int id, Room room, String check_in, String check_out, int room_price, String payment_method, CreditCard credit_card) {
         this.id = id;
         this.room = room;
         this.check_in = check_in;
         this.check_out = check_out;
         this.room_price = room_price;
-        this.status = status;
+        this.payment_method = payment_method;
+        this.credit_card = credit_card;
     }
 
     public int getId() {
@@ -85,11 +91,19 @@ public class Reservation {
         this.room_price = room_price;
     }
 
-    public String getStatus() {
-        return status;
+    public String getPayment_method() {
+        return payment_method;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setPayment_method(String payment_method) {
+        this.payment_method = payment_method;
+    }
+
+    public CreditCard getCredit_card() {
+        return credit_card;
+    }
+
+    public void setCredit_card(CreditCard credit_card) {
+        this.credit_card = credit_card;
     }
 }
