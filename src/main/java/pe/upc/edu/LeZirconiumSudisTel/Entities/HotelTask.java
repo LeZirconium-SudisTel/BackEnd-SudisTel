@@ -18,15 +18,21 @@ public class HotelTask {
     @Column(name = "status",length = 20,nullable = false)
     private String status;
 
-    public HotelTask() {
+    @ManyToOne
+    @JoinColumn(name = "idEmployer", nullable = true)
+    private Employer employer;
+
+    public HotelTask() {super();
     }
 
-    public HotelTask(int id, String name, String description, String status) {
+    public HotelTask(int id, String name, String description, String status, Employer employer) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.status = status;
+        this.employer = employer;
     }
+
 
     public int getId() {
         return id;
@@ -58,5 +64,13 @@ public class HotelTask {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Employer getEmployer() {
+        return employer;
+    }
+
+    public void setEmployer(Employer employer) {
+        this.employer = employer;
     }
 }
