@@ -14,8 +14,9 @@ public class Resources {
     @Column(name = "nameResource", length = 25,nullable = false)
     private String nameResource;
 
-    @Column(name = "typeResource", length = 25,nullable = false)
-    private String typeResource;
+    @ManyToOne
+    @JoinColumn (name = "typeResource", nullable = false)
+    private Type type;
 
     @Column(name = "stock", length = 25,nullable = false)
     private int stock;
@@ -23,16 +24,17 @@ public class Resources {
     @Column(name = "status", length = 25,nullable = false)
     private String status;
 
-    public Resources() {
+    public Resources() { super();
     }
 
-    public Resources(int idResource, String nameResource, String typeResource, int stock, String status) {
+    public Resources(int idResource, String nameResource, Type type, int stock, String status) {
         this.idResource = idResource;
         this.nameResource = nameResource;
-        this.typeResource = typeResource;
+        this.type = type;
         this.stock = stock;
         this.status = status;
     }
+
 
     public int getIdResource() {
         return idResource;
@@ -50,14 +52,6 @@ public class Resources {
         this.nameResource = nameResource;
     }
 
-    public String getTypeResource() {
-        return typeResource;
-    }
-
-    public void setTypeResource(String typeResource) {
-        this.typeResource = typeResource;
-    }
-
     public int getStock() {
         return stock;
     }
@@ -72,5 +66,13 @@ public class Resources {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
     }
 }
