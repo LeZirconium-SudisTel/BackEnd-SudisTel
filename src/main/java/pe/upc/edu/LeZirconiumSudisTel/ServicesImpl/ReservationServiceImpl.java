@@ -7,6 +7,7 @@ import pe.upc.edu.LeZirconiumSudisTel.Repositories.IReservationRepository;
 import pe.upc.edu.LeZirconiumSudisTel.ServicesInt.IReservationService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ReservationServiceImpl implements IReservationService {
@@ -27,5 +28,10 @@ public class ReservationServiceImpl implements IReservationService {
     @Override
     public void delete(int idReservation) {
         rR.deleteById(idReservation);
+    }
+
+    @Override
+    public Optional<Reservation> ListarPorId(int idReservation) {
+        return rR.findById(idReservation);
     }
 }

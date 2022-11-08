@@ -7,6 +7,8 @@ import pe.upc.edu.LeZirconiumSudisTel.Repositories.IRoomRepository;
 import pe.upc.edu.LeZirconiumSudisTel.ServicesInt.IRoomService;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class RoomServiceImpl implements IRoomService {
         @Autowired
@@ -21,6 +23,11 @@ public class RoomServiceImpl implements IRoomService {
         @Override
         public List<Room> search(String availableRoom) {
                 return rR.buscarDisponible(availableRoom);
+        }
+
+        @Override
+        public Optional<Room> ListarPorId(int id) {
+                return rR.findById(id);
         }
 }
 
