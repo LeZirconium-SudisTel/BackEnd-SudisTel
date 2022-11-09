@@ -19,10 +19,9 @@ public class CreditCard {
 
     @Column(name = "ccv", nullable = false)
     private int ccv;
-
-    @Column(name = "ExpireDate")
-    private String ExpireDate;
-
+    @JsonSerialize(using = ToStringSerializer.class)
+    @Column(name = "ExpireDate", nullable = false)
+    private String expireDate;
     public CreditCard() {
     }
 
@@ -30,7 +29,7 @@ public class CreditCard {
         this.idCreditCard = idCreditCard;
         this.numberCard = numberCard;
         this.ccv = ccv;
-        ExpireDate = expireDate;
+        this.expireDate = expireDate;
     }
 
     public int getIdCreditCard() {
@@ -58,10 +57,10 @@ public class CreditCard {
     }
 
     public String getExpireDate() {
-        return ExpireDate;
+        return expireDate;
     }
 
     public void setExpireDate(String expireDate) {
-        ExpireDate = expireDate;
+        this.expireDate = expireDate;
     }
 }
