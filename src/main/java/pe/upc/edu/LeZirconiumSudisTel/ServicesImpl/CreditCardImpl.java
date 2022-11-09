@@ -7,6 +7,7 @@ import pe.upc.edu.LeZirconiumSudisTel.Repositories.ICreditCardRepository;
 import pe.upc.edu.LeZirconiumSudisTel.ServicesInt.ICreditCardService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CreditCardImpl implements ICreditCardService {
@@ -25,7 +26,12 @@ public class CreditCardImpl implements ICreditCardService {
     }
 
     @Override
+    public Optional<CreditCard> listarid(int idCreditCard) {return ccr.findById(idCreditCard);}
+
+    @Override
     public void delete(int idCreditCard) {
         ccr.deleteById(idCreditCard);
     }
+
+
 }

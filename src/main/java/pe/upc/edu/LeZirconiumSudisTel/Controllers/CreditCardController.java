@@ -6,6 +6,7 @@ import pe.upc.edu.LeZirconiumSudisTel.Entities.CreditCard;
 import pe.upc.edu.LeZirconiumSudisTel.ServicesInt.ICreditCardService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("CreditCard")
@@ -22,4 +23,7 @@ public class CreditCardController {
 
     @DeleteMapping("/{id}")
     public void eliminar (@PathVariable ("id") Integer id) {ccService.delete(id);}
+
+    @GetMapping("/{id}")
+    public Optional<CreditCard> listarid(@PathVariable ("id") Integer id) {return ccService.listarid(id);}
 }
