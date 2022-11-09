@@ -11,15 +11,15 @@ public class HotelTask {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "name",length = 20,nullable = false)
+    @Column(name = "name",length = 45,nullable = false)
     private String name;
-    @Column(name = "description",length = 45,nullable = false)
+    @Column(name = "description",length = 100,nullable = false)
     private String description;
     @Column(name = "status",length = 20,nullable = false)
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "idEmployer", nullable = true)
+    @JoinColumn(name = "idEmployer")
     private Employer employer;
 
     public HotelTask() {super();
