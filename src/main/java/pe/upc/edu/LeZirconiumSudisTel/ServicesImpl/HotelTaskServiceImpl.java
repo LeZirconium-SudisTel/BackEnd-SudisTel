@@ -7,6 +7,7 @@ import pe.upc.edu.LeZirconiumSudisTel.Repositories.IHotelTaskRepository;
 import pe.upc.edu.LeZirconiumSudisTel.ServicesInt.IHotelTaskService;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Queue;
 @Service
 public class HotelTaskServiceImpl implements IHotelTaskService {
@@ -26,5 +27,10 @@ public class HotelTaskServiceImpl implements IHotelTaskService {
     @Override
     public List<HotelTask> search(String status) {
         return tR.buscarStatus(status);
+    }
+
+    @Override
+    public Optional<HotelTask> listarid(int id) {
+        return tR.findById(id);
     }
 }

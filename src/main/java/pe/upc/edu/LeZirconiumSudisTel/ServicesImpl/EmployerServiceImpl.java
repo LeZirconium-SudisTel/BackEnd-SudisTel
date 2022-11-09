@@ -7,6 +7,8 @@ import pe.upc.edu.LeZirconiumSudisTel.Repositories.IEmployerRepository;
 import pe.upc.edu.LeZirconiumSudisTel.ServicesInt.IEmployerService;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class EmployerServiceImpl implements IEmployerService{
     @Autowired
@@ -19,6 +21,8 @@ public class EmployerServiceImpl implements IEmployerService{
     public List<Employer> list(){
         return eR.findAll();
     }
+    @Override
+    public Optional<Employer> listarid(int idEmployer){return eR.findById(idEmployer);}
     @Override
     public void delete(int idEmployer){
         eR.deleteById(idEmployer);

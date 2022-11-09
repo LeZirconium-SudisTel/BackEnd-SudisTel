@@ -11,22 +11,28 @@ public class HotelTask {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "name",length = 20,nullable = false)
+    @Column(name = "name",length = 45,nullable = false)
     private String name;
-    @Column(name = "description",length = 45,nullable = false)
+    @Column(name = "description",length = 100,nullable = false)
     private String description;
     @Column(name = "status",length = 20,nullable = false)
     private String status;
 
-    public HotelTask() {
+    @ManyToOne
+    @JoinColumn(name = "idEmployer")
+    private Employer employer;
+
+    public HotelTask() {super();
     }
 
-    public HotelTask(int id, String name, String description, String status) {
+    public HotelTask(int id, String name, String description, String status, Employer employer) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.status = status;
+        this.employer = employer;
     }
+
 
     public int getId() {
         return id;
@@ -58,5 +64,13 @@ public class HotelTask {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Employer getEmployer() {
+        return employer;
+    }
+
+    public void setEmployer(Employer employer) {
+        this.employer = employer;
     }
 }

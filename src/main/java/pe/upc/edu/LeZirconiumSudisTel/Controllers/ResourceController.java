@@ -7,6 +7,8 @@ import pe.upc.edu.LeZirconiumSudisTel.Entities.Resources;
 import pe.upc.edu.LeZirconiumSudisTel.ServicesInt.IResourceService;
 
 import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/resources")
 public class ResourceController {
@@ -26,4 +28,6 @@ public class ResourceController {
     public void modificar(@RequestBody Resources r) {rResource.insert(r);}
     @PostMapping("/buscar")
     public List<Resources> buscar(@RequestBody Resources r) {return rResource.search(r.getNameResource());}
+    @GetMapping("/{id}")
+    public Optional<Resources> listarid(@PathVariable ("id") Integer id) {return rResource.listarid(id);}
 }

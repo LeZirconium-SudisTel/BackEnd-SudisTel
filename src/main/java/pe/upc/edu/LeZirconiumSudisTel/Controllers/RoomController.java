@@ -6,8 +6,10 @@ import pe.upc.edu.LeZirconiumSudisTel.Entities.Room;
 import pe.upc.edu.LeZirconiumSudisTel.ServicesImpl.RoomServiceImpl;
 
 import java.util.List;
+import java.util.Optional;
+
 @RestController
-@RequestMapping("Room")
+@RequestMapping("/rooms")
 
 public class RoomController {
     @Autowired
@@ -15,6 +17,10 @@ public class RoomController {
     @PostMapping
     public void insert(@RequestBody Room r) {
         roomService.insert(r);
+    }
+    @GetMapping("/{id}")
+    public Optional<Room> ListarPorId(@PathVariable("id") Integer id){
+     return roomService.ListarPorId(id);
     }
     @GetMapping
     public List<Room> list(){
