@@ -24,4 +24,8 @@ public class HotelController {
     public void modificar(@RequestBody Hotel h) { hS.insert(h); }
     @PostMapping("/buscar")
     public List<Hotel> buscar(@RequestBody Hotel h) {return hS.search(h.getProvince());}
+    @GetMapping("/buscar_mayor_precio")
+    public List<Hotel> buscarMayorPrecio(){
+        return hS.buscarMayorPrecio();
+    }
 }
