@@ -13,4 +13,9 @@ import java.util.List;
 public interface IHotelTaskRepository extends JpaRepository<HotelTask,Integer> {
     @Query("FROM HotelTask t where t.status like %:status%")
     List<HotelTask> buscarStatus(@Param("status") String status);
+
+    @Query(value = "select e.first_name_employer,count(h.id) from hotel_tasks  h left join employer e on e.id_employer = h.id_employer group by e.id_employer", nativeQuery = true)
+    List<String[]> buscarCantidadTareas();
+    @Query(value =  "select * from hotel_tasks where status = 'En proceso' " , nativeQuery = true)
+    List<HotelTask> buscarEnProceso();
 }
