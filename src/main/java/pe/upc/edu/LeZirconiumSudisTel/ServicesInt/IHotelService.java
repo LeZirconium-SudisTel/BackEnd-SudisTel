@@ -8,4 +8,5 @@ public interface IHotelService {
     public void insert(Hotel hotel);
     List<Hotel> list();
     List<Hotel> search(String province);
+    List<Hotel> buscarMayorPrecio();
 }

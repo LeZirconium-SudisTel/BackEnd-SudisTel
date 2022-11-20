@@ -25,6 +25,11 @@ public class HotelServiceImpl implements IHotelService {
         return hR.buscarProvincia(province);
     }
 
+    @Override
+    public List<Hotel> buscarMayorPrecio() {
+        return hR.buscarMayorPrecio();
+    }
+
 }
 
 

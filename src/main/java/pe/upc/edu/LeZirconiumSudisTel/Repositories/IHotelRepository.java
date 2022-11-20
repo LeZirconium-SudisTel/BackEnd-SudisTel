@@ -12,4 +12,6 @@ import java.util.List;
 public interface IHotelRepository extends JpaRepository<Hotel, Integer> {
     @Query("FROM Hotel h where h.province like %:province%")
     List<Hotel> buscarProvincia(@Param("province") String province);
+    @Query(value = "SELECT * FROM hotels h WHERE h.average_price >= 500", nativeQuery = true)
+    List<Hotel> buscarMayorPrecio();
 }
