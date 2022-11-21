@@ -3,9 +3,11 @@ package pe.upc.edu.LeZirconiumSudisTel.ServicesImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.upc.edu.LeZirconiumSudisTel.Entities.Employer;
+import pe.upc.edu.LeZirconiumSudisTel.Entities.RespuestaEmployer;
 import pe.upc.edu.LeZirconiumSudisTel.Repositories.IEmployerRepository;
 import pe.upc.edu.LeZirconiumSudisTel.ServicesInt.IEmployerService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,5 +31,19 @@ public class EmployerServiceImpl implements IEmployerService{
     }
     @Override
     public List<Employer> search(String first_nameEmployer){return eR.buscarNombre(first_nameEmployer);
+    }
+    @Override
+    public List<Employer> buscarEmail(String correo){return eR.findByemailEmployer(correo);}
+    @Override
+    public List<Employer> buscarDominio(){return eR.buscarDominio();}
+    public List<RespuestaEmployer> buscarCantidadRoles(){
+        List<RespuestaEmployer> lista=new ArrayList<>();
+        eR.buscarCantidadRoles().forEach(y->{
+            RespuestaEmployer r=new RespuestaEmployer();
+            r.setRole(y[0]);
+            r.setCantidad(y[1]);
+            lista.add(r);
+        });
+        return lista;
     }
 }

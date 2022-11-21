@@ -16,7 +16,6 @@ public class Type implements Serializable {
     @Column(name = "nameType", length = 25,nullable = false)
     private String nameType;
 
-
     public Type() {
     }
 
