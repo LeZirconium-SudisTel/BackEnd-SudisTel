@@ -2,6 +2,7 @@ package pe.upc.edu.LeZirconiumSudisTel.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.upc.edu.LeZirconiumSudisTel.Entities.CountRoom;
 import pe.upc.edu.LeZirconiumSudisTel.Entities.Room;
 import pe.upc.edu.LeZirconiumSudisTel.ServicesImpl.RoomServiceImpl;
 
@@ -34,4 +35,8 @@ public class RoomController {
     public List<Room> buscarDisponible(@RequestBody Room r){
         return roomService.search(r.getAvailableRoom());
     }
+    @GetMapping( "/buscar_estado")
+    public List<Room> buscarEstado() {return roomService.buscarEstado();}
+    @GetMapping("/cantidad_hotel")
+    public List<CountRoom> searchCantidad () {return roomService.searchCantidad();}
 }
