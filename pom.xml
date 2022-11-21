@@ -11,6 +11,7 @@
 	<groupId>pe.upc.edu</groupId>
 	<artifactId>LeZirconium-SudisTel</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>LeZirconium-SudisTel</name>
 	<description>Este es el BackEnd de Sudistel</description>
 	<properties>
