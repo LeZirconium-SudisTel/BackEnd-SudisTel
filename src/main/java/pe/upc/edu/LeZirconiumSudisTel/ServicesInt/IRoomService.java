@@ -1,5 +1,6 @@
 package pe.upc.edu.LeZirconiumSudisTel.ServicesInt;
 
+import pe.upc.edu.LeZirconiumSudisTel.Entities.CountRoom;
 import pe.upc.edu.LeZirconiumSudisTel.Entities.Room;
 
 import java.util.List;
@@ -10,4 +11,8 @@ public interface IRoomService {
     List<Room> list();
     List<Room> search(String availableRoom);
     public Optional<Room> ListarPorId(int id);
+
+    List<Room> buscarEstado();
+
+    List<CountRoom> searchCantidad();
 }

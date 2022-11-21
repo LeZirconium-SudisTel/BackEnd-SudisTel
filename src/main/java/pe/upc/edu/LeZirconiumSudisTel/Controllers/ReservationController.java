@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.upc.edu.LeZirconiumSudisTel.Entities.Employer;
 import pe.upc.edu.LeZirconiumSudisTel.Entities.Reservation;
+import pe.upc.edu.LeZirconiumSudisTel.Entities.RespuestaReservation;
 import pe.upc.edu.LeZirconiumSudisTel.ServicesInt.IReservationService;
 
 import java.util.List;
@@ -32,5 +33,10 @@ public class ReservationController {
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id){
         rService.delete(id);
+    }
+
+    @GetMapping("/cantidad_tarjetas")
+    public List<RespuestaReservation> buscarCantidadTarjetas(){
+        return rService.buscarCantidadTarjetas();
     }
 }
