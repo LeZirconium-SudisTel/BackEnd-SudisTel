@@ -14,9 +14,9 @@ public class Employer {
     private String first_nameEmployer;
     @Column(name = "last_nameEmployer",length = 45,nullable = false)
     private String last_nameEmployer;
-    @Column(name = "phone_numberEmployer",length = 45,nullable = false)
+    @Column(name = "phone_numberEmployer",length = 9,nullable = false)
     private String phone_numberEmployer;
-    @Column(name = "dniEmployer",length = 45,nullable = false)
+    @Column(name = "dniEmployer",length = 8,nullable = false)
     private int dniEmployer;
     @Column(name = "photoEmployer",length = 45,nullable = false)
     private String photoEmployer;
