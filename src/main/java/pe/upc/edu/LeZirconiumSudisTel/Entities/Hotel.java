@@ -14,7 +14,7 @@ public class Hotel {
     private String number_of_stars;
     @Column(name = "average_price", nullable = false)
     private int average_price;
-    @Column(name = "contact_number", nullable = false)
+    @Column(name = "contact_number", length = 9, nullable = false)
     private long contact_number;
     @Column(name = "province", length = 20, nullable = false)
     private String province;
